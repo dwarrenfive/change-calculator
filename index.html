@@ -21,22 +21,26 @@
       <input id="amount-received" />
     </div>
     <div>
-      <center><button id="calculate-change">Calculate</button></center>
+      <center>
+        <button id="calculate-change" onclick="handleClickEvent()">
+          Calculate
+        </button>
+      </center>
     </div>
     <div>
       <div class="container">
         <input id="amount-due" />
       </div>
-      <br />
-      <p id="dollars-output"></p>
-      <br />
-      <p id="quarters-output"></p>
-      <br />
-      <p id="dimes-output"></p>
-      <br />
-      <p id="nickels-output"></p>
-      <br />
-      <p id="pennies-output"></p>
+
+      <p id="dollars-output">Dollars</p>
+
+      <p id="quarters-output">Quarters</p>
+
+      <p id="dimes-output">Dimes</p>
+
+      <p id="nickels-output">Nickles</p>
+
+      <p id="pennies-output">Pennies</p>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
