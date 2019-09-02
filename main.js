@@ -6,18 +6,20 @@ function calculateChange(custCash, storePrice) {
 
   const cashValue = [100, 25, 10, 5, 1];
 
-  let amount = 0;
+  var amount;
 
   for (var i = 0; i < cashValue.length; i++) {
     amount = newAmount % cashValue[i];
     if (newAmount > 100) {
       var dollars = Math.floor(newAmount / 100);
+
       document.getElementById(
         "dollars-output"
       ).innerHTML = `Dollars: ${dollars}`;
     }
     if (newAmount > 25) {
       var quarters = Math.floor(newAmount / 25);
+
       document.getElementById(
         "quarters-output"
       ).innerHTML = `Quarters: ${quarters}`;
