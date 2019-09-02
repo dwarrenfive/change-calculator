@@ -1,38 +1,51 @@
-let storePrice = document.getElementById("amount-due").value;
-let custCash = document.getElementById("amount-received").value;
-
 function calculateChange(custCash, storePrice) {
-  let newAmount = custCash % storePrice;
-  let change = {};
+  var storePrice = document.getElementById("amount-due").value; // 800
+  var custCash = document.getElementById("amount-received").value; // 1000
+  var newAmount = custCash - storePrice; // 200
 
   const cashValue = [100, 25, 10, 5, 1];
-  const cashType = [
-    document.getElemementById("dollars-output").innerHTML,
-    document.getElementById("quarter-output").innerHTML,
-    document.getElementById("dimes-output").innerHTML,
-    document.getElementById("nickles-output").innerHTML,
-    document.getElementById("pennies-output").innerHTML
-  ];
 
   let amount = 0;
 
   for (var i = 0; i < cashValue.length; i++) {
-    amount = Math.floor(newAmount / cashValue[i]);
-    if (amount > 0) {
-      change[cashType[i]] = amount;
-      newAmount = newAmount % cashValue[i];
+    amount = Math.floor(newAmount / cashValue[i]); // 200
+    newAmount = newAmount % cashValue[i];
+    if (amount > 100) {
+      var dollars = amount;
+      document.getElementById(
+        "dollars-output"
+      ).innerHTML = `Dollars: ${dollars}`;
+    }
+    if (amount > 25) {
+      var quarters = amount;
+      document.getElementById(
+        "quarters-output"
+      ).innerHTML = `Quarters: ${quarters}`;
+    }
+    if (amount > 10) {
+      var dimes = amount;
+      document.getElementById("dimes-output").innerHTML = `Dimes: ${dimes}`;
+    }
+    if (amount > 5) {
+      var nickels = amount;
+      document.getElementById(
+        "nickels-output"
+      ).innerHTML = `Nickles: ${nickels}`;
+    }
+    if (amount > 1) {
+      var pennies = amount;
+      document.getElementById(
+        "pennies-output"
+      ).innerHTML = `Pennies: ${pennies}`;
     }
   }
-
-  return change;
 }
 
 function handleClickEvent(e) {
-  let userCash = document.getElementById("amount-received").value;
+  return calculateChange();
 
+  /* let userCash = document.getElementById("amount-received").value;
   let storePrice = document.getElementById("amount-due").value;
-
-  let result = calculateChange(userCash, storePrice);
-
-  document.getElementById("calculate-change").value = result;
+  let result = calculateChange(userCash, storePrice); 
+  document.getElementById("calculate-change").value = result; */
 }
