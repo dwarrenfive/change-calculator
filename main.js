@@ -4,12 +4,19 @@ function calculateChange(custCash, storePrice) {
 
   var changeValue = 100 * (custCash - storePrice);
 
+  if (changeValue < 0) {
+    document.getElementById(
+      "total-due"
+    ).innerHTML = `Your total cash back is: $ Error, amount received must be greater than amount owed`;
+  } else {
+    document.getElementById(
+      "total-due"
+    ).innerHTML = `Your total cash back is: $${(changeValue / 100).toFixed(2)}`;
+  }
+
   const cashValue = [10000, 5000, 2000, 1000, 500, 100, 25, 10, 5, 1];
 
-  // var amount;
-
   for (var i = 0; i < cashValue.length; i++) {
-    // amount = newAmount % cashValue[i];
     if (changeValue >= 10000) {
       document.getElementById("hundreds-output").innerHTML =
         "Hundred: " + Math.floor(changeValue / cashValue[i]);
