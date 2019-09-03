@@ -72,9 +72,4 @@ function calculateChange(custCash, storePrice) {
 
 function handleClickEvent(e) {
   return calculateChange();
-
-  /* let userCash = document.getElementById("amount-received").value;
-  let storePrice = document.getElementById("amount-due").value;
-  let result = calculateChange(userCash, storePrice); 
-  document.getElementById("calculate-change").value = result; */
 }
