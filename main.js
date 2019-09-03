@@ -1,44 +1,63 @@
 function calculateChange(custCash, storePrice) {
-  var storePrice = document.getElementById("amount-due").value; // 800
-  var custCash = document.getElementById("amount-received").value; // 1000
+  var storePrice = document.getElementById("amount-due").value;
+  var custCash = document.getElementById("amount-received").value;
 
-  var newAmount = custCash - storePrice; // 200
+  var changeValue = 100 * (custCash - storePrice);
 
-  const cashValue = [100, 25, 10, 5, 1];
+  const cashValue = [10000, 5000, 2000, 1000, 500, 100, 25, 10, 5, 1];
 
-  var amount;
+  // var amount;
 
   for (var i = 0; i < cashValue.length; i++) {
-    amount = newAmount % cashValue[i];
-    if (newAmount > 100) {
-      var dollars = Math.floor(newAmount / 100);
-
-      document.getElementById(
-        "dollars-output"
-      ).innerHTML = `Dollars: ${dollars}`;
+    // amount = newAmount % cashValue[i];
+    if (changeValue >= 10000) {
+      document.getElementById("hundreds-output").innerHTML =
+        "Hundred: " + Math.floor(changeValue / cashValue[i]);
+      changeValue = changeValue % cashValue[i];
     }
-    if (newAmount > 25) {
-      var quarters = Math.floor(newAmount / 25);
-
-      document.getElementById(
-        "quarters-output"
-      ).innerHTML = `Quarters: ${quarters}`;
+    if (changeValue >= 5000) {
+      document.getElementById("fifties-output").innerHTML =
+        "Fifty: " + Math.floor(changeValue / cashValue[i]);
+      changeValue = changeValue % cashValue[i];
     }
-    if (newAmount > 10) {
-      var dimes = Math.floor(newAmount / 10);
-      document.getElementById("dimes-output").innerHTML = `Dimes: ${dimes}`;
+    if (changeValue >= 2000) {
+      document.getElementById("twenties-output").innerHTML =
+        "Twenty: " + Math.floor(changeValue / cashValue[i]);
+      changeValue = changeValue % cashValue[i];
     }
-    if (newAmount > 5) {
-      var nickels = Math.floor(newAmount / 5);
-      document.getElementById(
-        "nickels-output"
-      ).innerHTML = `Nickles: ${nickels}`;
+    if (changeValue >= 1000) {
+      document.getElementById("tens-output").innerHTML =
+        "Ten: " + Math.floor(changeValue / cashValue[i]);
+      changeValue = changeValue % cashValue[i];
     }
-    if (newAmount > 1) {
-      var pennies = Math.floor(newAmount / 1);
-      document.getElementById(
-        "pennies-output"
-      ).innerHTML = `Pennies: ${pennies}`;
+    if (changeValue >= 500) {
+      document.getElementById("fives-output").innerHTML =
+        "Five: " + Math.floor(changeValue / cashValue[i]);
+      changeValue = changeValue % cashValue[i];
+    }
+    if (changeValue >= 100) {
+      document.getElementById("dollars-output").innerHTML =
+        "Dollar: " + Math.floor(changeValue / cashValue[i]);
+      changeValue = changeValue % cashValue[i];
+    }
+    if (changeValue >= 25) {
+      document.getElementById("quarters-output").innerHTML =
+        "Quarter: " + Math.floor(changeValue / cashValue[i]);
+      changeValue = changeValue % cashValue[i];
+    }
+    if (changeValue >= 10) {
+      document.getElementById("dimes-output").innerHTML =
+        "Dime: " + Math.floor(changeValue / cashValue[i]);
+      changeValue = changeValue % cashValue[i];
+    }
+    if (changeValue >= 5) {
+      document.getElementById("nickels-output").innerHTML =
+        `Nickel: ` + Math.floor(changeValue / cashValue[i]);
+      changeValue = changeValue % cashValue[i];
+    }
+    if (changeValue >= 1) {
+      document.getElementById("pennies-output").innerHTML =
+        "Penny: " + Math.round(Math.floor(changeValue / cashValue[i]));
     }
   }
 }
