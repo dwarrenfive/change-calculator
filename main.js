@@ -64,12 +64,12 @@ function calculateChange(custCash, storePrice) {
     }
     if (changeValue >= 1) {
       document.getElementById("pennies-output").innerHTML =
-        "Penny: " + Math.round(changeValue / cashValue[i]);
+        "Penny: " + Math.round(Math.floor(changeValue / cashValue[i]));
       changeValue = changeValue % cashValue[i];
     }
   }
 }
 
-function handleClickEvent(e) {
+function handleClickEvent() {
   return calculateChange();
 }
