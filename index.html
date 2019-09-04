@@ -18,6 +18,18 @@
       h1 {
         text-align: center;
       }
+      body {
+        margin-left: 75px;
+        margin-right: 75px;
+      }
+      #left-five {
+        float: left;
+        width: 49%;
+      }
+      #right-five {
+        float: left;
+        width: 49%;
+      }
     </style>
     <h1>Change Calculator</h1>
     <div class="container">
@@ -36,29 +48,32 @@
       </div>
       <div class="container">
         <p id="total-due">Your total cash back is: $</p>
+      </div>
+      <div>
+        <div class="container" id="left-five">
+          <p id="hundreds-output">Hundreds:</p>
 
-        <p id="hundreds-output">Hundreds:</p>
+          <p id="fifties-output">Fifties:</p>
 
-        <p id="fifties-output">Fifties:</p>
+          <p id="twenties-output">Twenties:</p>
 
-        <p id="twenties-output">Twenties:</p>
+          <p id="tens-output">Tens:</p>
 
-        <p id="tens-output">Tens:</p>
+          <p id="fives-output">Fives:</p>
+        </div>
+        <div class="container" id="right-five">
+          <p id="dollars-output">Dollars:</p>
 
-        <p id="fives-output">Fives:</p>
+          <p id="quarters-output">Quarters:</p>
 
-        <p id="dollars-output">Dollars:</p>
+          <p id="dimes-output">Dimes:</p>
 
-        <p id="quarters-output">Quarters:</p>
+          <p id="nickels-output">Nickels:</p>
 
-        <p id="dimes-output">Dimes:</p>
-
-        <p id="nickels-output">Nickels:</p>
-
-        <p id="pennies-output">Pennies:</p>
+          <p id="pennies-output">Pennies:</p>
+        </div>
       </div>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="main.js" charset="utf-8"></script>
   </body>
