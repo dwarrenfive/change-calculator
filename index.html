@@ -11,69 +11,88 @@
       href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Federant&display=swap"
+      rel="stylesheet"
+    />
+
     <meta charset="utf-8" />
   </head>
+
   <body>
     <style>
       h1 {
         text-align: center;
+        margin: 0px;
+        font-family: "Federant", cursive;
       }
       body {
-        margin-left: 75px;
-        margin-right: 75px;
+        background-image: url("money.jpg");
+        margin: 25px;
+      }
+      .container {
+        font-family: "Federant", cursive;
+        border-style: double;
+        border-width: 5px;
+        width: 65%;
+        padding: 10px;
+        background-color: rgba(235, 238, 228, 0.8);
+      }
+      #calculate-change {
+        font-family: "Federant", cursive;
       }
       #left-five {
-        float: left;
-        width: 49%;
+        display: inline-block;
       }
       #right-five {
-        float: left;
-        width: 49%;
+        display: inline-block;
+        margin-left: 275px;
       }
     </style>
-    <h1>Change Calculator</h1>
+
     <div class="container">
+      <h1>Change Calculator</h1>
+
       <form>Amount Received<input id="amount-received" /></form>
-    </div>
-    <div>
       <center>
-        <button id="calculate-change" onclick="handleClickEvent()">
+        <button
+          class="hoverable"
+          id="calculate-change"
+          onclick="handleClickEvent()"
+        >
           Calculate
         </button>
       </center>
-    </div>
-    <div>
-      <div class="container">
-        <form>Amount Due<input id="amount-due" /></form>
+
+      <form>Amount Due<input id="amount-due" /></form>
+
+      <p id="total-due">Your total cash back is: $</p>
+
+      <div id="left-five">
+        <p id="hundreds-output">Hundreds:</p>
+
+        <p id="fifties-output">Fifties:</p>
+
+        <p id="twenties-output">Twenties:</p>
+
+        <p id="tens-output">Tens:</p>
+
+        <p id="fives-output">Fives:</p>
       </div>
-      <div class="container">
-        <p id="total-due">Your total cash back is: $</p>
-      </div>
-      <div>
-        <div class="container" id="left-five">
-          <p id="hundreds-output">Hundreds:</p>
 
-          <p id="fifties-output">Fifties:</p>
+      <div id="right-five">
+        <p id="dollars-output">Dollars:</p>
 
-          <p id="twenties-output">Twenties:</p>
+        <p id="quarters-output">Quarters:</p>
 
-          <p id="tens-output">Tens:</p>
+        <p id="dimes-output">Dimes:</p>
 
-          <p id="fives-output">Fives:</p>
-        </div>
-        <div class="container" id="right-five">
-          <p id="dollars-output">Dollars:</p>
+        <p id="nickels-output">Nickels:</p>
 
-          <p id="quarters-output">Quarters:</p>
-
-          <p id="dimes-output">Dimes:</p>
-
-          <p id="nickels-output">Nickels:</p>
-
-          <p id="pennies-output">Pennies:</p>
-        </div>
+        <p id="pennies-output">Pennies:</p>
       </div>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="main.js" charset="utf-8"></script>
   </body>
