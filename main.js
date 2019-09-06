@@ -2,7 +2,7 @@ function calculateChange(custCash, storePrice) {
   var storePrice = document.getElementById("amount-due").value;
   var custCash = document.getElementById("amount-received").value;
 
-  var changeValue = 100 * (custCash - storePrice);
+  var changeValue = Math.round(100 * (custCash - storePrice)).toFixed(2);
 
   if (changeValue < 0) {
     document.getElementById(
@@ -64,7 +64,7 @@ function calculateChange(custCash, storePrice) {
     }
     if (changeValue >= 1) {
       document.getElementById("pennies-output").innerHTML =
-        "Penny: " + Math.round(changeValue / cashValue[i]);
+        "Penny: " + changeValue / cashValue[i];
       changeValue = changeValue % cashValue[i];
     }
   }
