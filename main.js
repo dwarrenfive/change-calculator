@@ -64,7 +64,7 @@ function calculateChange(custCash, storePrice) {
     }
     if (changeValue >= 1) {
       document.getElementById("pennies-output").innerHTML =
-        "Penny: " + changeValue / cashValue[i];
+        "Penny: " + Math.round(changeValue / cashValue[i]);
       changeValue = changeValue % cashValue[i];
     }
   }
